@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Reminder 🖤</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 600px;
+            animation: appear 2s ease;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: #ff8eb5;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px #ff4f91;
+        }
+
+        p {
+            color: #c5c5c5;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #ff6b9d;
+            color: #080808;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px #ff6b9d;
+        }
+
+        #surprise {
+            display: none;
+            margin-top: 30px;
+            animation: appear 1.5s ease;
+        }
+
+        #surprise h2 {
+            color: #ff8eb5;
+            margin-bottom: 15px;
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            color: #ff6b9d;
+            font-size: 20px;
+            animation: float 7s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Heyyy, chaz. 🖤</h1>
+
+        <p>
+            I made something special for you.
+            Because sometimes, words aren't enough
+            to show someone how much they mean to you.
+        </p>
+
+        <button onclick="showSurprise()">
+            Open your little surprise ♡
+        </button>
+
+        <div id="surprise">
+            <h2>You mean a lot to me. ❤️</h2>
+            <p>
+                I hope you never forget how special you are.
+                I'm genuinely grateful to have you in my life.
+                No matter what happens, I hope you always
+                remember that someone out there cares about you.
+                And that someone is meeeeeeee. 
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        function showSurprise() {
+            document.getElementById("surprise").style.display = "block";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+            heart.innerHTML = "♥";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 9000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
+</div>
+<div style="margin-top: 35px;">
+    <p>Wait... I almost forgot someone. 👀</p>
+
+    <button onclick="showSky()">
+        One last surprise ♡
+    </button>
+
+    <div id="sky-surprise" style="display: none; margin-top: 30px;">
+        <h2>SKYYYY! </h2>
+
+        <img
+            src="sky.png"
+            alt="Chaz's adorable cat Sky"
+            style="width: 100%; max-width: 350px; border-radius: 20px; margin: 20px auto;"
+        >
+
+        <p>
+           I think someone else wanted to remind you that you're loved.
+
+
+            Give this little baby a hug for me.
+
+            <br><br>
+
+            Sending you and Sky lots of love heh. 
+    </div>
+</div>
+
+<script>
+    function showSky() {
+        const sky = document.getElementById("sky-surprise");
+
+        sky.style.display = "block";
+
+        sky.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+</script>
+</body>
+</html>
+    
